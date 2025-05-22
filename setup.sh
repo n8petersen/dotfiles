@@ -16,7 +16,7 @@ link_files() {
     for item in "$src_dir"/* "$src_dir"/.[!.]* "$src_dir"/..?*; do
         # Skip if it's a .md file
         if [[ "$item" == *.md ]]; then
-            echo "Skipping .md file: $item"
+            echo "🟣 Skipping .md file: $item"
             continue
         fi
 
@@ -24,12 +24,12 @@ link_files() {
         local target="$target_dir/$base_item"
 
         if [ -L "$target" ]; then
-            echo "Skipping existing symlink: $target"
+            echo "🔵 Skipping existing symlink: $target"
         elif [ -e "$target" ]; then
-            echo "Skipping existing file or directory: $target"
+            echo "🟡 Skipping existing file or directory: $target"
         else
             ln -s "$item" "$target"
-            echo "Created symlink: $target -> $item"
+            echo "🟢 Created symlink: $target -> $item"
         fi
     done
 

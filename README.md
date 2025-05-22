@@ -12,3 +12,29 @@ Nate's dotfiles repo
    ```
    
 5. Install packages
+    Common packages example:
+    ```
+    1password
+    deskflow
+    discord
+    fastfetch
+    ffmpeg
+    git
+    github-cli
+    go
+    google-cloud-cli
+    mirage
+    neovim
+    nvidia-dkms
+    nvidia-utils
+    obs-studio
+    paru
+    pulseaudio-qt
+    spotify
+    starship
+    vim
+    visual-studio-code-bin
+    vivaldi
+    zen-browser
+    ```
+

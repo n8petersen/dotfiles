@@ -8,8 +8,7 @@ Nate's dotfiles repo
    ```
 3. Run setup
    ```
-   cd ~/.dotfiles \
-   ./setup.sh
+   cd ~/.dotfiles && ./setup.sh
    ```
    
 5. Install packages

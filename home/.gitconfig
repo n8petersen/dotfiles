@@ -1,0 +1,13 @@
+[user]
+        name = Nathan Petersen
+	email = n8knows@gmail.com
+
+[push]
+	default = simple
+
+[include]
+	# Allows other configuration to be added that should not be pushed up to git
+	path = .gitconfig.local
+
+[init]
+	defaultBranch = main

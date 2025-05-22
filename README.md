@@ -37,4 +37,13 @@ Nate's dotfiles repo
     vivaldi
     zen-browser
     ```
-
+    
+    Gaming packages example:
+    ```
+    curseforge
+    minecraft-launcher
+    prismlauncher
+    protonup-qt
+    r2modman-bin
+    steam
+    ```

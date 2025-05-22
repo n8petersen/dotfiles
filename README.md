@@ -1,5 +1,5 @@
 # dotfiles
-Nate's dotfiles repo  
+Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other distros as well.
 
 ## Setup
 1. Clone the repo  

@@ -10,7 +10,16 @@ link_files() {
 
     mkdir -p "$target_dir"
 
-    for item in "$src_dir"/*; do
+    # Enable globbing for dotfiles and avoid errors on no match
+    shopt -s nullglob dotglob
+
+    for item in "$src_dir"/* "$src_dir"/.[!.]* "$src_dir"/..?*; do
+        # Skip if it's a .md file
+        if [[ "$item" == *.md ]]; then
+            echo "Skipping .md file: $item"
+            continue
+        fi
+
         local base_item=$(basename "$item")
         local target="$target_dir/$base_item"
 
@@ -23,6 +32,8 @@ link_files() {
             echo "Created symlink: $target -> $item"
         fi
     done
+
+    shopt -u nullglob dotglob
 }
 
 # Link files from ./home to ~/

@@ -211,6 +211,6 @@
         "tooltip-format-connected": " {device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
 	"on-click": "rfkill toggle 0",
-	"on-click-right": "rofi-bluetooth"
+	"on-click-right": "blueberry"
     }
 }

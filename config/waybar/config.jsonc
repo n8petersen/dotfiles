@@ -1,0 +1,216 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    //"height": 50,
+    "modules-left": [
+	"group/power",
+        "hyprland/workspaces",
+        "clock"
+        //"custom/weather",
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        //"custom/temperature",
+        //"custom/memory",
+        "backlight",
+        "pulseaudio",
+        "pulseaudio#microphone",
+        "network",
+        "bluetooth",
+        "battery"
+    ],
+    "group/power": {
+	"orientation": "inherit",
+	"drawer": {
+	    "transition-duration": 250,
+	    "transition-left-to-right": false
+	},
+	"modules": [
+	    "custom/shutdown",
+	    "custom/lock",
+	    "custom/logoff",
+	    "custom/sleep",
+	    "custom/reboot"
+	]
+    },
+    "custom/lock": {
+	"format": " {}",
+	"tooltip": true,
+	"tooltip-format": "lock",
+	"on-click": "hyprlock"
+    },
+    "custom/logoff": {
+	"format": " {}",
+	"tooltip": true,
+	"tooltip-format": "logoff",
+	"on-click": "hyprctl dispatch exit"
+    },
+    "custom/sleep": {
+	"format": "󰽥 {}",
+	"tooltip": true,
+	"tooltip-format": "sleep",
+	"on-click": "systemctl suspend"
+    },
+    "custom/hibernate": {
+	"format": "󰱮 {}",
+	"tooltip": true,
+	"tooltip-format": "hibernate",
+	"on-click": "systemctl hibernate"
+    },
+    "custom/reboot": {
+	"format": " {}",
+	"tooltip": true,
+	"tooltip-format": "reboot",
+	"on-click": "reboot"
+    },
+    "custom/shutdown": {
+	"format": " {}",
+	"tooltip": true,
+	"tooltip-format": "shutdown",
+	"on-click": "shutdown now"
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format-icons": {
+            "1": "󰎤",
+            "2": "󰎧",
+            "3": "󰎪",
+            "4": "󰎭",
+            "5": "󰎱"
+        },
+        "persistent_workspaces": {
+            "*": 1
+        }
+    },
+    "hyprland/window": {
+        "format": "{}"
+    },
+    "custom/weather": {
+        "tooltip": true,
+        "format": "{}",
+        "interval": 3600,
+        "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+        "return-type": "json"
+    },
+    "custom/temperature": {
+        "tooltip": true,
+        "format": " {}",
+        "interval": 30,
+        "exec": "cpu"
+    },
+    "custom/memory": {
+        "tooltip": true,
+        "format": "🧠 {}",
+        "interval": 30,
+        "exec": "memory"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "  {:%H:%M    %a, %b %e}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}  {percent}%",
+        "format-icons": [
+            "󰃞",
+            "󰃟",
+            "󰃠"
+        ],
+        "on-scroll-up": "brightnessctl -q set 1%-",
+        "on-scroll-down": "brightnessctl -q set 1%+"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 50,
+            "critical": 30
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "tooltip": false,
+        "format-muted": " Muted",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%-",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+",
+        "scroll-step": 100,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " Muted",
+        //"on-click": "pamixer --default-source -t",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        //"on-scroll-up": "pamixer --default-source -i 1",
+        "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ 1%-",
+        //"on-scroll-down": "pamixer --default-source -d 1",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+",
+        "scroll-step": 5
+    },
+    "network": {
+        //"format-wifi": "  {signalStrength}%",
+        "format-wifi": "  {essid}",
+        //"format-ethernet": "{ipaddr}/{cidr}",
+        "format-ethernet": " ",
+        "tooltip-format": "{essid} - {ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "⚠  Disconnected",
+        //"format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
+        "format-alt": "{ipaddr}/{cidr}",
+	"on-click-right": "networkmanager_dmenu"
+    },
+    "bluetooth": {
+        //"format": " {status}",
+	"format-on": "󰂯",
+	"format-off": "󰂲",
+        "format-disabled": "󰂲", // an empty format will hide the module
+        "format-connected": "󰂰 {num_connections}",
+        "tooltip-format": "{device_alias}",
+        "tooltip-format-connected": " {device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+	"on-click": "rfkill toggle 0",
+	"on-click-right": "rofi-bluetooth"
+    }
+}

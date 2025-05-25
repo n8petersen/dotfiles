@@ -68,6 +68,7 @@ Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other 
    hyprshot
    hyprutils
    kitty
+   nwg-displays
    waybar
    wpa_supplicant
    yazi

@@ -27,6 +27,7 @@ Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other 
    github-cli
    go
    google-cloud-cli
+   kitty
    mirage
    neovim
    networkmanager
@@ -41,8 +42,9 @@ Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other 
    vim
    visual-studio-code-bin
    vivaldi
-   zen-browser
    wpa_supplicant
+   yazi
+   zen-browser
    ```
     
    Gaming packages example:
@@ -65,7 +67,8 @@ Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other 
    hyprpicker
    hyprshot
    hyprutils
+   kitty
    waybar
    wpa_supplicant
+   yazi
    ```
-```

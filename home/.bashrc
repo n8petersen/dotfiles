@@ -15,3 +15,6 @@ starship preset gruvbox-rainbow -o ~/.config/starship.toml
 # export STARSHIP_CONFIG=~/config/starship.toml
 #
 source ~/.bash_aliases
+
+export EDITOR=nvim
+export VISUAL=nvim

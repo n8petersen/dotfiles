@@ -9,7 +9,8 @@
     "modules-left": [
 	"group/power",
         "hyprland/workspaces",
-        "clock"
+        "clock",
+	"tray"
         //"custom/weather",
     ],
     "modules-center": [
@@ -119,6 +120,10 @@
     "clock": {
         "format": "  {:%H:%M    %a, %b %e}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
+    },
+    "tray": {
+	"icon-size": 17,
+    	"spacing": 6
     },
     "backlight": {
         "device": "intel_backlight",

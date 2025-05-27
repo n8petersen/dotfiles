@@ -15,8 +15,9 @@ Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other 
    Common packages example:
    ```
    1password
-   blueberry
+   bluetui
    bluez
+   bluez-util
    btop
    deskflow
    discord

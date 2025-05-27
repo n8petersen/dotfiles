@@ -165,6 +165,7 @@
         "tooltip": false,
         "format-muted": " Muted",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+	"on-click-right": "hyprctl dispatch exec [float] 'pavucontrol -t 3'",
         "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%-",
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+",
         "scroll-step": 100,
@@ -188,6 +189,7 @@
         "format-source-muted": " Muted",
         //"on-click": "pamixer --default-source -t",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+	"on-click-right": "hyprctl dispatch exec [float] 'pavucontrol -t 4'",
         //"on-scroll-up": "pamixer --default-source -i 1",
         "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ 1%-",
         //"on-scroll-down": "pamixer --default-source -d 1",
@@ -204,7 +206,8 @@
         "format-disconnected": "⚠  Disconnected",
         //"format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
         "format-alt": "{ipaddr}/{cidr}",
-	"on-click-right": "kitty nmtui"
+	//"on-click-right": "kitty nmtui"
+	"on-click-right": "hyprctl dispatch exec [float] kitty nmtui"
     },
     "bluetooth": {
         //"format": " {status}",
@@ -216,6 +219,7 @@
         "tooltip-format-connected": " {device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
 	"on-click": "rfkill toggle 0",
-	"on-click-right": "blueberry"
+	//"on-click-right": "blueberry"
+	"on-click-right": "hyprctl dispatch exec [float] kitty bluetui"
     }
 }

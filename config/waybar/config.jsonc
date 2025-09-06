@@ -218,8 +218,8 @@
         "tooltip-format": "{device_alias}",
         "tooltip-format-connected": " {device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
-	"on-click": "rfkill toggle 0",
+	//"on-click": "rfkill toggle 0",
 	//"on-click-right": "blueberry"
-	"on-click-right": "hyprctl dispatch exec [float] kitty bluetui"
+	"on-click": "hyprctl dispatch exec [float] kitty bluetui"
     }
 }

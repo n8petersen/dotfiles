@@ -25,6 +25,7 @@ Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other 
    fastfetch
    ffmpeg
    git
+   git-delta
    github-cli
    go
    google-cloud-cli

@@ -55,6 +55,7 @@ Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other 
    bluetui
    bluez
    bluez-util
+   dolphin
    hyprcursor
    hyprgraphics
    hypridle
@@ -64,12 +65,11 @@ Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other 
    hyprshot
    hyprutils
    kitty
+   networkmanager
+   nmtui
    nwg-displays
+   pulseaudio-qt
    waybar
    wpa_supplicant
    yazi
-   dolphin
-   pulseaudio-qt
-   networkmanager
-   nmtui
    ```

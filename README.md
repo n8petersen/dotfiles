@@ -15,13 +15,8 @@ Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other 
    Common packages example:
    ```
    1password
-   bluetui
-   bluez
-   bluez-util
    btop
-   deskflow
    discord
-   dolphin
    fastfetch
    ffmpeg
    git
@@ -32,19 +27,15 @@ Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other 
    kitty
    mirage
    neovim
-   networkmanager
-   nmtui
    nvidia-dkms
    nvidia-utils
    obs-studio
    paru
-   pulseaudio-qt
    spotify
    starship
    vim
    visual-studio-code-bin
    vivaldi
-   wpa_supplicant
    yazi
    zen-browser
    ```
@@ -61,6 +52,9 @@ Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other 
 
    Hyprland packages example:
    ```
+   bluetui
+   bluez
+   bluez-util
    hyprcursor
    hyprgraphics
    hypridle
@@ -74,4 +68,8 @@ Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other 
    waybar
    wpa_supplicant
    yazi
+   dolphin
+   pulseaudio-qt
+   networkmanager
+   nmtui
    ```

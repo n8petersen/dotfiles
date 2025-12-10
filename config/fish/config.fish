@@ -13,6 +13,8 @@ starship init fish | source
 
 # Configure env vars
 set SSH_AUTH_SOCK ~/.1password/agent.sock
+set -gx EDITOR nvim
+set -gx VISUAL nvim
 
 # Configure aliases
 alias clr "printf '\033[2J\033[3J\033[1;1H'"
@@ -23,6 +25,7 @@ alias gst='git status'
 alias tf='terraform'
 alias kb='kubectl'
 alias kbc='kubectl config'
-alias ssh='kitty +kitten ssh'
+alias kssh='kitty +kitten ssh'
 alias parupdate='paru -Syu --noconfirm'
 alias p='paru -Syu --noconfirm'
+alias update='paru -Syu --noconfirm'

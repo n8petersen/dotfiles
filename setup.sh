@@ -5,35 +5,35 @@ BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Function to create symlinks
 link_files() {
-    local src_dir=$1
-    local target_dir=$2
+  local src_dir=$1
+  local target_dir=$2
 
-    mkdir -p "$target_dir"
+  mkdir -p "$target_dir"
 
-    # Enable globbing for dotfiles and avoid errors on no match
-    shopt -s nullglob dotglob
+  # Enable globbing for dotfiles and avoid errors on no match
+  shopt -s nullglob dotglob
 
-    for item in "$src_dir"/* "$src_dir"/.[!.]* "$src_dir"/..?*; do
-        # Skip if it's a .md file
-        if [[ "$item" == *.md ]]; then
-            echo "🟣 Skipping .md file: $item"
-            continue
-        fi
+  for item in "$src_dir"/* "$src_dir"/.[!.]* "$src_dir"/..?*; do
+    # Skip if it's a .md file
+    if [[ "$item" == *.md ]]; then
+      echo "🟣 Skipping .md file: $item"
+      continue
+    fi
 
-        local base_item=$(basename "$item")
-        local target="$target_dir/$base_item"
+    local base_item=$(basename "$item")
+    local target="$target_dir/$base_item"
 
-        if [ -L "$target" ]; then
-            echo "🔵 Skipping existing symlink: $target"
-        elif [ -e "$target" ]; then
-            echo "🟡 Skipping existing file or directory: $target"
-        else
-            ln -s "$item" "$target"
-            echo "🟢 Created symlink: $target -> $item"
-        fi
-    done
+    if [ -L "$target" ]; then
+      echo "🔵 Skipping existing symlink: $target"
+    elif [ -e "$target" ]; then
+      echo "🟡 Skipping existing file or directory: $target"
+    else
+      ln -s "$item" "$target"
+      echo "🟢 Created symlink: $target -> $item"
+    fi
+  done
 
-    shopt -u nullglob dotglob
+  shopt -u nullglob dotglob
 }
 
 # Link files from ./home to ~/
@@ -42,3 +42,10 @@ link_files "$BASE_DIR/home" "$HOME"
 # Link files from ./config to ~/.config
 link_files "$BASE_DIR/config" "$HOME/.config"
 
+# Install nerd-font
+echo "Installing CaskaydiaCove Nerd Font"
+mkdir -p ~/.local/share/fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.zip -P ~/.local/share/fonts
+unzip ~/.local/share/fonts/CascadiaCode.zip -d ~/.local/share/fonts
+rm ~/.local/share/fonts/CascadiaCode.zip
+fc-cache -fv

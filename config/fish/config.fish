@@ -9,7 +9,7 @@ set -U fish_greeting ""
 starship init fish | source
 
 # Enable brew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Configure env vars
 set SSH_AUTH_SOCK ~/.1password/agent.sock

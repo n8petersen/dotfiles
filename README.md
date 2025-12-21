@@ -12,33 +12,30 @@ Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other 
    ```
    
 5. Install packages  
-   Common packages example:
+   Common mac packages example:
    ```
    1password
    btop
    discord
    fastfetch
+   fish
    ffmpeg
    git
    git-delta
    go
    gcloud-cli
+   k9s
    kitty
+   kubectl
    neovim
+   signal
    spotify
    starship
-   vim
-   yazi
-   zen-browser
-   ```
-    
-   Gaming packages example:
-   ```
-   curseforge
-   minecraft-launcher
-   prismlauncher
-   r2modman-bin
    steam
-   ```
-
+   vim
+   visual-studio-code
+   wget
+   whatsapp
+   yazi
+   zen
    ```

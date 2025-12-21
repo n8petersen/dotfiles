@@ -3,7 +3,8 @@
 	email = n8knows@gmail.com
 
 [push]
-	default = simple
+  default = simple
+  autoSetupRemote = true
 
 [include]
 	# Allows other configuration to be added that should not be pushed up to git

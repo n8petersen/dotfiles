@@ -32,3 +32,4 @@ alias p='paru -Syu --noconfirm'
 alias y='yay -Syu --noconfirm'
 alias update='paru -Syu --noconfirm'
 alias q="exit"
+alias c="claude"

@@ -17,23 +17,23 @@ end
 
 # Configure env vars
 set SSH_AUTH_SOCK ~/.1password/agent.sock
-set -gx EDITOR nvim
-set -gx VISUAL nvim
+set EDITOR nvim
+set VISUAL nvim
+set KUBE_EDITOR nvim
+set K9S_EDITOR nvim
 
 # Configure aliases
 alias clr "printf '\033[2J\033[3J\033[1;1H'"
 alias ll "ls -lah"
-alias kb kubectl
 alias nv='nvim'
 alias gst='git status'
 alias tf='terraform'
 alias kb='kubectl'
 alias kbc='kubectl config'
-alias kctx="kubectx"
 alias kssh='kitty +kitten ssh'
-alias parupdate='paru -Syu --noconfirm'
-alias p='paru -Syu --noconfirm'
-alias y='yay -Syu --noconfirm'
-alias update='paru -Syu --noconfirm'
-alias q="exit"
+alias kctx="kubectx"
+alias q='exit'
+alias :q='exit'
 alias c="claude"
+
+fish_add_path $HOME/.local/bin

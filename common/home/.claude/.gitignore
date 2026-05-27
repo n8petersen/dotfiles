@@ -7,5 +7,5 @@ history.jsonl
 session-env/
 sessions/
 shell-snapshots/
-projects/**/*.jsonl
+projects/
 plans/

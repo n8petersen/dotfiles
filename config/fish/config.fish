@@ -13,6 +13,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Configure env vars
 set SSH_AUTH_SOCK ~/.1password/agent.sock
+set EDITOR nvim
+set VISUAL nvim
+set KUBE_EDITOR nvim
+set K9S_EDITOR nvim
 
 # Configure aliases
 alias clr "printf '\033[2J\033[3J\033[1;1H'"
@@ -23,4 +27,13 @@ alias gst='git status'
 alias tf='terraform'
 alias kb='kubectl'
 alias kbc='kubectl config'
-alias ssh='kitty +kitten ssh'
+alias kssh='kitty +kitten ssh'
+alias kctx="kubectx"
+alias q='exit'
+alias :q='exit'
+export PATH="$HOME/.local/bin:$PATH"
+alias c="claude"
+alias o="opencode"
+
+# opencode
+fish_add_path /Users/nate/.opencode/bin

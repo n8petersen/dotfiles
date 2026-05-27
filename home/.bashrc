@@ -152,3 +152,5 @@ source ~/.bash_aliases
 # Set nvim as default editor
 export EDITOR=nvim
 export VISUAL=nvim
+export KUBE_EDITOR=nvim
+export K9S_EDITOR=nvim

@@ -1,77 +1,42 @@
 # dotfiles
-Nate's dotfiles repo. Primarily used for Arch Linux, but could be used on other distros as well.
+
+Nate's dotfiles. Supports Arch Linux, CachyOS, and macOS.
+
+## Structure
+
+```
+common/      # Shared across all profiles (fish, nvim, kitty, starship, git, etc.)
+arch/        # Arch / CachyOS
+arch-hypr/   # Arch + Hyprland
+mac/         # macOS
+```
+
+`setup.sh` always links `common/`, then links the selected profile on top.
 
 ## Setup
-1. Clone the repo  
-   ```
-   git clone git@github.com:n8petersen/dotfiles.git ~/.dotfiles
-   ```
-3. Run setup  
-   ```
-   cd ~/.dotfiles && ./setup.sh
-   ```
-   
-5. Install packages  
-   Common packages example:
-   ```
-   1password
-   bluetui
-   bluez
-   bluez-util
-   btop
-   deskflow
-   discord
-   dolphin
-   fastfetch
-   ffmpeg
-   git
-   git-delta
-   github-cli
-   go
-   google-cloud-cli
-   kitty
-   mirage
-   neovim
-   networkmanager
-   nmtui
-   nvidia-dkms
-   nvidia-utils
-   obs-studio
-   paru
-   pulseaudio-qt
-   spotify
-   starship
-   vim
-   visual-studio-code-bin
-   vivaldi
-   wpa_supplicant
-   yazi
-   zen-browser
-   ```
-    
-   Gaming packages example:
-   ```
-   curseforge
-   minecraft-launcher
-   prismlauncher
-   protonup-qt
-   r2modman-bin
-   steam
-   ```
 
-   Hyprland packages example:
-   ```
-   hyprcursor
-   hyprgraphics
-   hypridle
-   hyprlock
-   hyprpaper
-   hyprpicker
-   hyprshot
-   hyprutils
-   kitty
-   nwg-displays
-   waybar
-   wpa_supplicant
-   yazi
-   ```
+### 1. Clone
+```bash
+git clone git@github.com:n8petersen/dotfiles.git ~/.dotfiles
+```
+
+> On a new machine without SSH keys configured, clone via HTTPS first:
+> ```bash
+> git clone https://github.com/n8petersen/dotfiles.git ~/.dotfiles
+> ```
+
+### 2. Run setup
+```bash
+cd ~/.dotfiles && ./setup.sh
+```
+
+- **macOS**: auto-detected. Installs Homebrew and CaskaydiaMono Nerd Font if missing, then links configs.
+- **Linux**: prompts for a profile:
+  - `[1] arch` — Arch / CachyOS
+  - `[2] arch-hypr` — Arch + Hyprland
+
+### 3. Install packages
+
+See the profile README for package lists:
+- [arch](arch/README.md)
+- [arch-hypr](arch-hypr/README.md)

@@ -1,22 +1,18 @@
 #!/bin/bash
 
-# Get the absolute path of the current script's directory
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Function to create symlinks
 link_files() {
     local src_dir=$1
     local target_dir=$2
 
-    mkdir -p "$target_dir"
+    [ -d "$src_dir" ] || return 0
 
-    # Enable globbing for dotfiles and avoid errors on no match
+    mkdir -p "$target_dir"
     shopt -s nullglob dotglob
 
     for item in "$src_dir"/* "$src_dir"/.[!.]* "$src_dir"/..?*; do
-        # Skip if it's a .md file
         if [[ "$item" == *.md ]]; then
-            echo "🟣 Skipping .md file: $item"
             continue
         fi
 
@@ -36,9 +32,31 @@ link_files() {
     shopt -u nullglob dotglob
 }
 
-# Link files from ./home to ~/
-link_files "$BASE_DIR/home" "$HOME"
+OS="$(uname -s)"
 
-# Link files from ./config to ~/.config
-link_files "$BASE_DIR/config" "$HOME/.config"
+if [ "$OS" = "Darwin" ]; then
+    PROFILE="mac"
+elif [ "$OS" = "Linux" ]; then
+    echo "Select a profile:"
+    echo "  [1] arch"
+    echo "  [2] arch-hypr"
+    read -rp "Profile [1-2]: " choice
+    case "$choice" in
+        1) PROFILE="arch" ;;
+        2) PROFILE="arch-hypr" ;;
+        *) echo "Invalid choice: $choice"; exit 1 ;;
+    esac
+else
+    echo "Unsupported OS: $OS"
+    exit 1
+fi
 
+echo "Using profile: $PROFILE"
+
+# Link profile first so it takes priority over common for any overlapping dirs
+link_files "$BASE_DIR/$PROFILE/home" "$HOME"
+link_files "$BASE_DIR/$PROFILE/config" "$HOME/.config"
+
+# Link common (fills in everything not already linked by the profile)
+link_files "$BASE_DIR/common/home" "$HOME"
+link_files "$BASE_DIR/common/config" "$HOME/.config"

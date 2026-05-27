@@ -8,8 +8,12 @@ set -U fish_greeting ""
 # Enable starship
 starship init fish | source
 
-# Enable brew
-# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# macOS specific
+if test (uname) = Darwin
+    eval (/opt/homebrew/bin/brew shellenv)
+    fish_add_path ~/.opencode/bin
+    alias o="opencode"
+end
 
 # Configure env vars
 set SSH_AUTH_SOCK ~/.1password/agent.sock

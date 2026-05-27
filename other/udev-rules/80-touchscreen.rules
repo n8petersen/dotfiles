@@ -1,4 +1,0 @@
-# SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="214e", ATTR{authorized}="0"
-# SUBSYSTEM=="usb", ATTRS{idVendor}=="14e5", ATTRS{idProduct}=="e545", ATTR{authorized}="0"
-
-ACTION=="add|change", KERNEL=="event[0-9]*", ATTRS{id/vendor}=="03eb", ATTRS{id/product}=="214e", ENV{LIBINPUT_IGNORE_DEVICE}="1"

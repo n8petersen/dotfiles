@@ -36,6 +36,17 @@ OS="$(uname -s)"
 
 if [ "$OS" = "Darwin" ]; then
     PROFILE="mac"
+
+    if ! command -v brew &>/dev/null; then
+        echo "Installing Homebrew..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+
+    if ! brew list --cask font-caskaydia-mono-nerd-font &>/dev/null; then
+        echo "Installing CaskaydiaMono Nerd Font..."
+        brew install --cask font-caskaydia-mono-nerd-font
+    fi
+
 elif [ "$OS" = "Linux" ]; then
     echo "Select a profile:"
     echo "  [1] arch"

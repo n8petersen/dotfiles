@@ -9,3 +9,5 @@ sessions/
 shell-snapshots/
 projects/
 plans/
+mcp-needs-auth-cache.json
+plugins/marketplaces/claude-plugins-official/

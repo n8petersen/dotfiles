@@ -17,10 +17,10 @@ end
 
 # Configure env vars
 set SSH_AUTH_SOCK ~/.1password/agent.sock
-set EDITOR nvim
-set VISUAL nvim
-set KUBE_EDITOR nvim
-set K9S_EDITOR nvim
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+set -gx KUBE_EDITOR nvim
+set -gx K9S_EDITOR nvim
 
 # Configure aliases
 alias clr "printf '\033[2J\033[3J\033[1;1H'"

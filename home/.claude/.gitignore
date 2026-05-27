@@ -1,3 +1,5 @@
+.credentials.json
+.last-cleanup
 backups/
 cache/
 file-history/

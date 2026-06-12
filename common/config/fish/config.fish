@@ -32,6 +32,7 @@ alias kb='kubectl'
 alias kbc='kubectl config'
 alias kssh='kitty +kitten ssh'
 alias kctx="kubectx"
+alias ctx="kubectx"
 alias q='exit'
 alias :q='exit'
 alias c="claude"

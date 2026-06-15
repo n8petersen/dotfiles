@@ -11,3 +11,6 @@ projects/
 plans/
 mcp-needs-auth-cache.json
 plugins/marketplaces/claude-plugins-official/
+ide/
+paste-cache/
+.last-update-result.json

@@ -22,6 +22,13 @@ set -gx VISUAL nvim
 set -gx KUBE_EDITOR nvim
 set -gx K9S_EDITOR nvim
 
+# Sensitive env vars (gitignored, see common/config/secrets/)
+if test -f ~/.config/secrets/secrets.env
+    for line in (string match -rv '^\s*(#|$)' (cat ~/.config/secrets/secrets.env))
+        set -gx (string split -m1 "=" $line)
+    end
+end
+
 # Configure aliases
 alias clr "printf '\033[2J\033[3J\033[1;1H'"
 alias ll "ls -lah"

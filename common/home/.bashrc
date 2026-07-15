@@ -19,4 +19,11 @@ source ~/.bash_aliases
 export EDITOR=nvim
 export VISUAL=nvim
 
+# Sensitive env vars (gitignored, see common/config/secrets/)
+if [ -f ~/.config/secrets/secrets.env ]; then
+    set -a
+    source ~/.config/secrets/secrets.env
+    set +a
+fi
+
 

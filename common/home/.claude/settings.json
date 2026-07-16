@@ -99,6 +99,12 @@
       "Bash(col *)",
       "Bash(git commit*)",
       "Bash(git push*)",
+      "Bash(argocd app list*)",
+      "Bash(argocd app get*)",
+      "Bash(argocd app history*)",
+      "Bash(argocd app diff*)",
+      "Bash(argocd proj list*)",
+      "Bash(argocd repo list*)",
       "Bash(gh auth status*)",
       "Bash(gh pr list*)",
       "Bash(gh pr view*)",
@@ -119,5 +125,6 @@
   },
   "theme": "dark",
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": false,
+  "tui": "fullscreen"
 }

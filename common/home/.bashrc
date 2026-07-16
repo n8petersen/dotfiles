@@ -2,6 +2,14 @@
 # ~/.bashrc
 #
 
+# Sensitive env vars (gitignored, see common/config/secrets/)
+# Sourced before the interactive-only guard so non-interactive shells get it too.
+if [ -f ~/.config/secrets/secrets.env ]; then
+    set -a
+    source ~/.config/secrets/secrets.env
+    set +a
+fi
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -18,12 +26,5 @@ source ~/.bash_aliases
 
 export EDITOR=nvim
 export VISUAL=nvim
-
-# Sensitive env vars (gitignored, see common/config/secrets/)
-if [ -f ~/.config/secrets/secrets.env ]; then
-    set -a
-    source ~/.config/secrets/secrets.env
-    set +a
-fi
 
 

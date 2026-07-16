@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git ls-tree *)",
+      "Bash(mkdir -p /Users/nate/.dotfiles-migration-backup)",
+      "Bash(cp /Users/nate/.claude/statusline-command.sh /Users/nate/.dotfiles-migration-backup/)",
+      "Bash(cp /Users/nate/.claude/settings.json /Users/nate/.dotfiles-migration-backup/)",
+      "Bash(cp /Users/nate/.claude/settings.local.json /Users/nate/.dotfiles-migration-backup/)",
+      "Bash(cp /Users/nate/.claude.json /Users/nate/.dotfiles-migration-backup/)",
+      "Bash(brew bundle *)",
+      "Read(//Users/nate/.dotfiles-migration-backup/**)",
+      "Read(//Users/nate/.claude/**)",
+      "Read(//Users/nate/.config/fish/**)"
+    ]
+  }
+}

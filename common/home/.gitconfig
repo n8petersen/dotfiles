@@ -14,6 +14,7 @@
 # git-delta
 [core]
     pager = delta
+	excludesfile = /Users/nate/.gitignore_global
 
 [interactive]
     diffFilter = delta --color-only

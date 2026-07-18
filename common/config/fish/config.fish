@@ -43,5 +43,7 @@ alias ctx="kubectx"
 alias q='exit'
 alias :q='exit'
 alias c="claude"
+alias pbcopy='xsel --input --clipboard'
+alias pbpaste='xsel --output --clipboard'
 
 fish_add_path $HOME/.local/bin

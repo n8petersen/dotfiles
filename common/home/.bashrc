@@ -26,5 +26,3 @@ source ~/.bash_aliases
 
 export EDITOR=nvim
 export VISUAL=nvim
-
-

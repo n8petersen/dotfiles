@@ -1,5 +1,6 @@
 .credentials.json
 .last-cleanup
+settings.local.json
 backups/
 cache/
 file-history/
@@ -14,3 +15,10 @@ plugins/marketplaces/claude-plugins-official/
 ide/
 paste-cache/
 .last-update-result.json
+.mcp.json
+daemon.lock
+daemon.log
+daemon.status.json
+daemon/
+jobs/
+tasks/

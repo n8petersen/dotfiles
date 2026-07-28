@@ -11,4 +11,4 @@
 	# ssh-keygen builds here (native: unconditionally requires an agent
 	# even for an unencrypted key; MSYS2: can't parse this key format at
 	# all), so signing stays routed through 1Password.
-	sshCommand = /c/Windows/System32/OpenSSH/ssh.exe
+	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe

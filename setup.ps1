@@ -95,6 +95,15 @@ $profileSrc = "$BaseDir\windows\powershell\Microsoft.PowerShell_profile.ps1"
 Link-SingleFile $profileSrc "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
 Link-SingleFile $profileSrc "$HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
 
+# Claude Code config: ~/.claude almost always already exists as a real directory (Claude Code
+# creates it on first run) full of machine-local runtime state (sessions, cache, credentials),
+# so the generic common/home symlink above always skips it. Single-file-symlink just the
+# tracked config files instead, leaving everything else on disk untouched.
+$claudeSrc = "$BaseDir\common\home\.claude"
+foreach ($f in @("CLAUDE.md", "settings.json", "settings.local.json", "statusline-command.sh")) {
+    Link-SingleFile "$claudeSrc\$f" "$HOME\.claude\$f"
+}
+
 # Windows Terminal settings: only the packaged (MSIX) install location is handled here,
 # since the unpackaged/portable release is uncommon.
 $terminalPackage = Get-ChildItem "$env:LOCALAPPDATA\Packages" -Filter "Microsoft.WindowsTerminal*" -ErrorAction SilentlyContinue |

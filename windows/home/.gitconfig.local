@@ -1,2 +1,14 @@
 [gpg "ssh"]
 	program = op-ssh-sign.exe
+
+[core]
+	# Git Bash's bundled ssh (MSYS2 build) fails on this ed25519 key with
+	# "error in libcrypto: unsupported"; the native Windows OpenSSH client
+	# handles it fine. SSH auth uses the local key file below (see
+	# ~/.ssh/config), so this only affects auth, not commit signing -
+	# op-ssh-sign.exe's own -Y sign codepath works fine through 1Password.
+	# Local -Y sign was tried and hits real bugs in both available
+	# ssh-keygen builds here (native: unconditionally requires an agent
+	# even for an unencrypted key; MSYS2: can't parse this key format at
+	# all), so signing stays routed through 1Password.
+	sshCommand = /c/Windows/System32/OpenSSH/ssh.exe

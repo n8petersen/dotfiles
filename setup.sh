@@ -57,6 +57,10 @@ elif [ "$OS" = "Linux" ]; then
         2) PROFILE="arch-hypr" ;;
         *) echo "Invalid choice: $choice"; exit 1 ;;
     esac
+elif [[ "$OS" == MINGW* || "$OS" == MSYS* || "$OS" == CYGWIN* ]]; then
+    echo "Windows detected. Run setup.ps1 in PowerShell instead:"
+    echo "  pwsh -File setup.ps1"
+    exit 1
 else
     echo "Unsupported OS: $OS"
     exit 1

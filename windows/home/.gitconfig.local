@@ -12,6 +12,7 @@
 	# Overrides common/home/.gitconfig's mac-only /opt/1Password/op-ssh-sign
 	# path. Signs locally now, no 1Password involved.
 	program = C:/Windows/System32/OpenSSH/ssh-keygen.exe
+	allowedSignersFile = C:/Users/Nathan/.ssh/allowed_signers
 
 [core]
 	# Git Bash's bundled ssh (MSYS2 build) fails on the 1Password-exported

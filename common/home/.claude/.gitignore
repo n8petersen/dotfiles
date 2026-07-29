@@ -1,6 +1,7 @@
 .credentials.json
 .last-cleanup
 settings.local.json
+plugins/known_marketplaces.json
 backups/
 cache/
 file-history/

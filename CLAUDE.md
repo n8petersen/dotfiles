@@ -12,12 +12,18 @@ A dotfiles repo using a profile-based symlink system. `setup.sh` creates symlink
 
 ## Running setup
 
+macOS/Linux:
 ```bash
 ./setup.sh
 ```
-
 - **macOS**: auto-detected; installs Homebrew and CaskaydiaMono Nerd Font if missing
 - **Linux**: prompts `[1] arch` or `[2] arch-hypr`
+
+Windows (PowerShell 7+):
+```powershell
+.\setup.ps1
+```
+Requires Developer Mode or an elevated shell (symlinks). Uses its own link logic (not bash's `link_files`) since native PowerShell has no `ln -s`/`uname`. Also single-file-symlinks the PowerShell profile (`windows/powershell/Microsoft.PowerShell_profile.ps1`) into both the PS7 and Windows PowerShell 5.1 profile locations, and Windows Terminal's `settings.json` if the packaged install is found — both fall outside the generic `home`/`config` → `$HOME`/`$HOME/.config` linking model since their target paths are fixed, OS-determined single files, not directories.
 
 ## Structure
 
@@ -28,6 +34,7 @@ common/      # Symlinked on every machine
 arch/        # Arch / CachyOS additions
 arch-hypr/   # Arch + Hyprland additions
 mac/         # macOS additions
+windows/     # Windows additions (PowerShell, native — not WSL; no kitty/fish, no native Windows support for either)
 ```
 
 Profile dirs are linked first; `common/` fills in everything not already linked. This means a file in `arch/config/fish/` takes priority over `common/config/fish/` on arch machines.

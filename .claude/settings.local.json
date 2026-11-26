@@ -10,7 +10,10 @@
       "Bash(brew bundle *)",
       "Read(//Users/nate/.dotfiles-migration-backup/**)",
       "Read(//Users/nate/.claude/**)",
-      "Read(//Users/nate/.config/fish/**)"
+      "Read(//Users/nate/.config/fish/**)",
+      "Read(//home/n80sire/**)",
+      "Read(//home/n80sire/.config/**)",
+      "Read(//home/n80sire/.config/secrets/**)"
     ]
   }
 }
